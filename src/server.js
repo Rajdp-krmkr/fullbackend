@@ -23,13 +23,15 @@ app.get("/", (req, res) => {
 
 app.get("/api/users", (req, res) => {
     res.json({
-        server: PORT,
+        instance: process.env.HOSTNAME,
+        port: PORT,
         users: [
             { id: 1, name: "Raj" },
             { id: 2, name: "Alex" }
         ]
     });
 });
+
 
 
 app.get("/api/products", (req, res) => {
